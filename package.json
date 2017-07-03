@@ -10,10 +10,13 @@
     "twitter",
     "bot"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gin-hell/nba-twitter-bot"
+  },
   "author": "jenhill",
   "license": "ISC",
   "dependencies": {
-    "nba": "^3.2.6",
     "nba.js": "^0.4.1",
     "twit": "^2.2.9"
   }

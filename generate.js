@@ -38,7 +38,7 @@ function composeTweet(){
 				var players = data.CommonAllPlayers;
 				var i = Math.floor(Math.random() * players.length);
 				playerName = players[i].display_first_last;
-
+				console.log(playerName);
 				resolve(playerName);		
 			}
 
@@ -97,6 +97,7 @@ function composeTweet(){
 				} else {
 					teamName2 = teams[j].team_name;
 					resolve(teamName2);
+					console.log(teamName2);
 				}
 			}	
 		});
@@ -136,7 +137,7 @@ function composeTweet(){
 		var text = tweets[index];	
 		index = (index + 1)% tweets.length;
 
-		// console.log(tweets[index]);
+		console.log(tweets[index]);
 	
 		T.post ('statuses/update', {
 		status: text + " #NBA #NBATrades #NBATradeNews🏀" }, 
@@ -153,7 +154,7 @@ function composeTweet(){
 	
 }
 
-composeTweet();
+// composeTweet();
 
 
 
@@ -166,14 +167,14 @@ composeTweet();
 // jen's is 3041956282
 
 var stream = T.stream('statuses/filter', {
-	follow: '23065057',
+	follow: '3041956282',
 });
 
 stream.on('tweet', tweetEvent);
 
 function tweetEvent (eventMsg) {
 
-	if (eventMsg.user.id == 23065057) {
+	if (eventMsg.user.id == 3041956282) {
 		console.log('*** TWEET FOUND ***   ' + index);
 		composeTweet();
 	} else {
